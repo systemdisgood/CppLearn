@@ -15,3 +15,8 @@ $(EXECUTABLE): $(OBJECTS)
 
 run:
 	./$(EXECUTABLE)
+
+runwin:
+	./$(EXECUTABLE).exe
+
+
