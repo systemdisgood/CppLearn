@@ -1,22 +1,7 @@
-CC=g++
-CFLAGS=-c -Wall
-LDFLAGS=
-SOURCES=main.cpp  
-OBJECTS=$(SOURCES:.cpp=.o)
-EXECUTABLE=main
+all: makeLesson1
 
-all: $(SOURCES) $(EXECUTABLE)
 
-$(EXECUTABLE): $(OBJECTS)
-	$(CC) $(LDFLAGS) $(OBJECTS) -o $@
-
-.cpp.o:
-	$(CC) $(CFLAGS) $< -o $@
-
-run:
-	./$(EXECUTABLE)
-
-runwin:
-	./$(EXECUTABLE).exe
+makeLesson1:
+	 $(MAKE) all -C ./Lesson1
 
 
