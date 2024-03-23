@@ -7,4 +7,12 @@ makeLesson1:
 makerunLesson1:
 	 $(MAKE) run -C ./Lesson1
 
+makeStupidFFT:
+	 $(MAKE) all -C ./StupidFFT
+
+makerunStupidFFT:
+	 $(MAKE) run -C ./StupidFFT
+
+
+
 
