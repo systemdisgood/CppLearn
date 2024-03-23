@@ -18,7 +18,7 @@ uint64_t uint64_t_pow(uint64_t base, uint8_t exponent)
 
 std::string string_of_binary_uint64_t(uint64_t input)
 {
-	if(input == 0) return "0000000000000000000000000000000000000000000000000000000000000000";
+	if(input == 0) return std::string("0000000000000000000000000000000000000000000000000000000000000000");
 	else
 	{
 		char cstr[65];
@@ -44,16 +44,14 @@ std::string string_of_binary_uint64_t(uint64_t input)
 std::vector<uint64_t> bit_reverse_indexes_gen(uint64_t FFTpower)
 {
 	std::vector<uint64_t> result;
-	uint64_t indexes_count = 2^FFTpower - 1;
+	uint64_t indexes_count = uint64_t_pow(2, FFTpower) - 1;
 	for(uint64_t index = 0; index < indexes_count; ++index)
 	{
 		uint64_t reversed_index = 0;
 		for(uint8_t bit_number = 0; bit_number < FFTpower; ++bit_number)
 		{
 			reversed_index |= ((((1<<bit_number) & (index<<bit_number))) << (63 - bit_number));
-		}
-		std::cout << reversed_index << std::endl;
-		std::cout << string_of_binary_uint64_t(reversed_index) << std::endl;
+		}	
 	}
 	return result;
 }
